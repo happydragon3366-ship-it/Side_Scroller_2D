@@ -52,7 +52,7 @@ public class Player_Controller : MonoBehaviour
             }
         }
          
-        while( PCBody != null );
+       
         if( Input.GetKeyDown(KeyCode.Space))
         {
             PCBody.AddForceY(JumpForce); 

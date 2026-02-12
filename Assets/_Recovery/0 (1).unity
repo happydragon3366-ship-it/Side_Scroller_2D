@@ -240,9 +240,9 @@ GameObject:
   m_Component:
   - component: {fileID: 162928681}
   - component: {fileID: 162928680}
+  - component: {fileID: 162928683}
   - component: {fileID: 162928679}
   - component: {fileID: 162928682}
-  - component: {fileID: 162928683}
   m_Layer: 3
   m_Name: Character
   m_TagString: Untagged
@@ -408,10 +408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42b7d6b0d7e2ad44aa4594f7ebba7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_Controller
-  JumpForce: 600
-  SpeedBase: 3
+  JumpForce: 400
+  SpeedBase: 2
   GravityForce: 1
-  DashForce: 15
+  DashForce: 10
   PlayerCharacter: {fileID: 162928678}
   PCBody: {fileID: 162928679}
   AxeXPositif: 1
