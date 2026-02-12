@@ -1,3 +1,5 @@
+
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
@@ -6,13 +8,14 @@ public class Player_Controller : MonoBehaviour
 
 
 
-    public int JumpForce = 200;
-    public int SpeedBase = 2;
+    public float JumpForce = 200f;
+    public float SpeedBase = 2f;
     public int GravityForce = 1;
-    public int DashForce = 5;
+    public int DashForce = 10;
     public GameObject PlayerCharacter;
     public Rigidbody2D PCBody;
-    public Co
+    public float AxeXPositif = 1f;
+    public float AxeXNegatif = -1f;
    
     
 
@@ -26,24 +29,31 @@ public class Player_Controller : MonoBehaviour
     void Update()
     {
         
-
+        
+        PCBody.gravityScale = GravityForce;
 
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            PlayerCharacter.transform.position = new Vector2(-1, 0) * SpeedBase;
+            PCBody.linearVelocityX = AxeXNegatif * SpeedBase ;  
+
+            if(Input.GetKey(KeyCode.E))
+            {
+                PCBody.linearVelocityX = AxeXNegatif * DashForce;
+            }
+
         }
     
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            PlayerCharacter.transform.position = new Vector2(1, 0) * SpeedBase;
+            PCBody.linearVelocityX = AxeXPositif * SpeedBase  ;
 
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKey(KeyCode.E))
             {
-                PCBody.AddForceX(DashForce);
+                PCBody.linearVelocityX = AxeXPositif * DashForce;
             }
         }
          
-
+        while( PCBody != null );
         if( Input.GetKeyDown(KeyCode.Space))
         {
             PCBody.AddForceY(JumpForce); 
