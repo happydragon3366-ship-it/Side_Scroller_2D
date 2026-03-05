@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ground (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -218,7 +222,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.030602694}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -228,7 +232,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.9387946}
   m_EdgeRadius: 0
 --- !u!1 &162928678
 GameObject:
@@ -263,9 +267,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2
+  m_LinearDamping: 1
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -384,7 +388,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: -0.0061204433, y: 0.19909227}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.28866667}
@@ -394,7 +398,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1101689, y: 1.024482}
   m_EdgeRadius: 0
 --- !u!114 &162928683
 MonoBehaviour:
@@ -410,12 +414,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player_Controller
   JumpForce: 600
   SpeedBase: 3
-  GravityForce: 1
+  GravityForce: 2
   DashForce: 15
   PlayerCharacter: {fileID: 162928678}
   PCBody: {fileID: 162928679}
-  AxeXPositif: 1
-  AxeXNegatif: -1
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  cooldown: 2
 --- !u!1 &428829017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
@@ -829,6 +835,10 @@ PrefabInstance:
     - target: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
       propertyPath: m_Name
       value: ground (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

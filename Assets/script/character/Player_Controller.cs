@@ -1,4 +1,6 @@
 
+using JetBrains.Annotations;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,52 +15,72 @@ public class Player_Controller : MonoBehaviour
     public int DashForce = 10;
     public GameObject PlayerCharacter;
     public Rigidbody2D PCBody;
-    public float AxeXPositif = 1f;
-    public float AxeXNegatif = -1f;
+    public LayerMask mask;
+    public IEnumerator MyCoroutine;
+    public int cooldown;
+    private bool _amIDashing;
+
    
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
         PCBody.gravityScale = GravityForce;
 
-        if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            PCBody.linearVelocityX = AxeXNegatif * SpeedBase ;  
+        var horizontalAxis = 0;
 
-            if(Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            horizontalAxis = -1;
+
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            horizontalAxis = 1;
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (horizontalAxis != 0)
             {
-                PCBody.linearVelocityX = AxeXNegatif * DashForce;
+                Dash(horizontalAxis);
             }
-
         }
-    
-        if(Input.GetKey(KeyCode.RightArrow))
+        if(!_amIDashing)
         {
-            PCBody.linearVelocityX = AxeXPositif * SpeedBase  ;
+            PCBody.linearVelocityX = horizontalAxis * SpeedBase;
+        }
 
-            if(Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f, mask);
+            if(hit.collider == true )
             {
-                PCBody.linearVelocityX = AxeXPositif * DashForce;
+                PCBody.AddForceY(JumpForce);
             }
         }
-         
-       
-        if( Input.GetKeyDown(KeyCode.Space))
+    }    
+
+    private void Dash(float axisValue)
+    {
+        if (!_amIDashing)
         {
-            PCBody.AddForceY(JumpForce); 
+            PCBody.linearVelocityX = axisValue* DashForce;
+            StartCoroutine(DashCooldown());
         }
-    
-    
-    
+    }
+    private IEnumerator DashCooldown()
+    {
+        _amIDashing = true;
+        yield return new WaitForSeconds(cooldown);
+        _amIDashing = false;
     }
 }
