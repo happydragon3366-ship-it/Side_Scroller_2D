@@ -17,7 +17,7 @@ public class Player_Controller : MonoBehaviour
     public Rigidbody2D PCBody;
     public LayerMask mask;
     public IEnumerator MyCoroutine;
-    public int cooldown;
+    public float cooldown;
     private bool _amIDashing;
 
    
@@ -73,10 +73,14 @@ public class Player_Controller : MonoBehaviour
     {
         if (!_amIDashing)
         {
-            PCBody.linearVelocityX = axisValue* DashForce;
-            StartCoroutine(DashCooldown());
-        }
-    }
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f, mask);
+            if (hit.collider == true)
+            {
+                PCBody.linearVelocityX = axisValue * DashForce;
+                StartCoroutine(DashCooldown());
+            }
+        }    }
     private IEnumerator DashCooldown()
     {
         _amIDashing = true;
@@ -84,3 +88,4 @@ public class Player_Controller : MonoBehaviour
         _amIDashing = false;
     }
 }
+

@@ -421,7 +421,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
-  cooldown: 2
+  cooldown: 0.5
 --- !u!1 &428829017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
