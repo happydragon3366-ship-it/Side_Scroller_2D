@@ -55,10 +55,10 @@ public class PJ_Core_Script : MonoBehaviour
     
     public IEnumerator ReviveCoolDown()
     {
-        PC_Deplacement.enabled = false;
+        
         yield return new WaitForSeconds(Death_CoolDown);
-        PC_Deplacement.enabled = true;
         PV = 20;
+        
     }
 
 

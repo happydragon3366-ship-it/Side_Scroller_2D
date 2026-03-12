@@ -19,6 +19,7 @@ public class Player_Controller : MonoBehaviour
     public IEnumerator MyCoroutine;
     public float cooldown;
     private bool _amIDashing;
+    private PJ_Core_Script Character;
 
    
     
@@ -87,5 +88,22 @@ public class Player_Controller : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         _amIDashing = false;
     }
+
+    public void Desactivate_Input()
+    {
+        if(Character.PV <= 0)
+        {
+            enabled = false;
+        }
+    }
+ 
+      
+    
+
+
+
+
+
+
 }
 
