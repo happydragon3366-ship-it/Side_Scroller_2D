@@ -423,7 +423,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cooldown: 0.6
-  _amIDashing: 0
   Character: {fileID: 162928684}
 --- !u!114 &162928684
 MonoBehaviour:
@@ -446,8 +445,6 @@ MonoBehaviour:
   Death_CoolDown: 5
   Stamina_Gain_CoolDown_Value: 3
   Capacity_Damage: 0
-  Stamina_Lack_During_Effect: 4
-  Stamina_Lack_Verification: 0
 --- !u!1 &428829017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}

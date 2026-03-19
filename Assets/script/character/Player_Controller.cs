@@ -18,8 +18,8 @@ public class Player_Controller : MonoBehaviour
     public LayerMask mask;
     public IEnumerator MyCoroutine;
     public float cooldown;
-    private bool _amIDashing;
-    private PJ_Core_Script Character;
+    public bool _amIDashing;
+    public PJ_Core_Script Character;
 
    
     
@@ -52,6 +52,7 @@ public class Player_Controller : MonoBehaviour
             if (horizontalAxis != 0)
             {
                 Dash(horizontalAxis);
+                
             }
         }
         if(!_amIDashing)
@@ -68,6 +69,7 @@ public class Player_Controller : MonoBehaviour
                 PCBody.AddForceY(JumpForce);
             }
         }
+         
     }    
 
     private void Dash(float axisValue)
@@ -80,29 +82,18 @@ public class Player_Controller : MonoBehaviour
             {
                 PCBody.linearVelocityX = axisValue * DashForce;
                 StartCoroutine(DashCooldown());
+                Character.Stamina_Max_Value -= 4f;
+                
+
+
             }
-        }    }
+    }   }    
     private IEnumerator DashCooldown()
     {
         _amIDashing = true;
         yield return new WaitForSeconds(cooldown);
         _amIDashing = false;
     }
-
-    public void Desactivate_Input()
-    {
-        if(Character.PV <= 0)
-        {
-            enabled = false;
-        }
-    }
- 
-      
-    
-
-
-
-
 
 
 }
