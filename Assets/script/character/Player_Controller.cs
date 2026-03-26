@@ -12,7 +12,7 @@ public class Player_Controller : MonoBehaviour
     public float JumpForce = 200f;
     public float SpeedBase = 2f;
     public int GravityForce = 1;
-    public int DashForce = 10;
+    public float DashForce = 10;
     public GameObject PlayerCharacter;
     public Rigidbody2D PCBody;
     public LayerMask mask;
@@ -20,7 +20,8 @@ public class Player_Controller : MonoBehaviour
     public float cooldown;
     public bool _amIDashing;
     public PJ_Core_Script Character;
-
+    public bool Is_Jumping;
+    public Wings Mutation_Wings;
    
     
 
@@ -66,13 +67,18 @@ public class Player_Controller : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f, mask);
             if(hit.collider == true )
             {
+                Is_Jumping = true;
                 PCBody.AddForceY(JumpForce);
+
+               
+                
+
             }
         }
          
     }    
 
-    private void Dash(float axisValue)
+    public void Dash(float axisValue)
     {
         if (!_amIDashing)
         {
@@ -88,7 +94,7 @@ public class Player_Controller : MonoBehaviour
 
             }
     }   }    
-    private IEnumerator DashCooldown()
+    public IEnumerator DashCooldown()
     {
         _amIDashing = true;
         yield return new WaitForSeconds(cooldown);

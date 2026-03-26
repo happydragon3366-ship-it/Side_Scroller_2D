@@ -19,6 +19,7 @@ public class PJ_Core_Script : MonoBehaviour
     public float Capacity_Damage;
     public float Stamina_Lack_During_Effect;
     public bool Stamina_Lack_Verification;
+    public bool Stamina_Gain_Verification;
     
     
     
@@ -39,30 +40,34 @@ public class PJ_Core_Script : MonoBehaviour
             
         }
 
-        if (Stamina_Max_Value > 15)
+        if (Stamina_Max_Value > 15) 
         {
             Stamina_Max_Value = 15;    
         }
         
         if (Stamina_Max_Value < 15) 
         {
-           StartCoroutine (Stamina_Gain());
+            
+            StartCoroutine (Stamina_Gain());
            
 
         }
         
-        if (Stamina_Max_Value <= 0f)
+        if (Stamina_Max_Value == 0f)
         {
-            StartCoroutine(Stamina_Lack());
+            
+            Stamina_Lack_Verification = true;
+            
+
         }
        
 
-        
-
-        if (Stamina_Max_Value < 0)
+        if(Stamina_Lack_Verification == true)
         {
-            Stamina_Max_Value = 0;
+            StartCoroutine(Stamina_Lack());
         }
+
+
        
     
     
@@ -94,9 +99,13 @@ public class PJ_Core_Script : MonoBehaviour
    
     public IEnumerator Stamina_Gain()
     {
-         
-        yield return new WaitForSeconds(Stamina_Gain_CoolDown_Value);
-        Stamina_Max_Value = Stamina_Max_Value + 1f;
+        
+        
+        
+            Stamina_Max_Value = Stamina_Max_Value + 1f;
+            yield return new WaitForSeconds(Stamina_Gain_CoolDown_Value);
+        
+        
 
 
 
@@ -104,12 +113,13 @@ public class PJ_Core_Script : MonoBehaviour
 
     public IEnumerator Stamina_Lack()
     {
-        Stamina_Lack_Verification = true;
-        if (Stamina_Lack_Verification == true)
-        {
+        
+       
+        
             PC_Deplacement.SpeedBase = 1f;
             PC_Deplacement.DashForce = 0;
-        }
+            print("zizi");
+        
         yield return new WaitForSeconds(Stamina_Lack_During_Effect);
         Stamina_Lack_Verification = false;
         
