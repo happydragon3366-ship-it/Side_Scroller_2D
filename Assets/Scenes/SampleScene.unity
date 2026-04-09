@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42b7d6b0d7e2ad44aa4594f7ebba7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_Controller
-  JumpForce: 600
+  JumpForce: 300
   SpeedBase: 3
   GravityForce: 2
   DashForce: 6
@@ -427,8 +427,7 @@ MonoBehaviour:
   cooldown: 0.6
   _amIDashing: 0
   Character: {fileID: 162928684}
-  Is_Jumping: 0
-  Mutation_Wings: {fileID: 0}
+  Mutation_Wings: {fileID: 162928686}
 --- !u!114 &162928684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +445,8 @@ MonoBehaviour:
   PCRigid_Body: {fileID: 162928679}
   PC_Collider: {fileID: 162928682}
   PC_Character: {fileID: 162928678}
+  Number_Of_Jump: 1
+  Number_Of_Jump_Max: 0
   PC_Deplacement: {fileID: 162928683}
   Death_CoolDown: 5
   Stamina_Gain_CoolDown_Value: 5
@@ -488,86 +489,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ae148076f35bb43b3b9eb1e1a1767a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wings
-  Mutation_Jauge: 100
-  PJ_control: {fileID: 162928683}
-  Character: {fileID: 162928684}
-  Mutation_Activate: 0
-  PJ_Collider: {fileID: 162928682}
-  Aerial_Dash_Activate: 0
---- !u!1 &348128951
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 348128954}
-  - component: {fileID: 348128953}
-  - component: {fileID: 348128952}
-  m_Layer: 0
-  m_Name: Mutation Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &348128952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348128951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8eb36a3b05a9a4a8ccbad5f5010747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Snake_Body
-  Mutation_Jauge: 100
-  PJ_control: {fileID: 162928683}
-  Character: {fileID: 162928684}
-  Mutation_Activate: 0
-  PJ_Collider: {fileID: 162928682}
-  Foes_Mask:
-    serializedVersion: 2
-    m_Bits: 128
-  Nothings:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &348128953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348128951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ae148076f35bb43b3b9eb1e1a1767a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wings
   Mutation_Jauge: 0
-  PJ_control: {fileID: 0}
-  Character: {fileID: 0}
+  PJ_control: {fileID: 162928683}
+  Character: {fileID: 162928684}
   Mutation_Activate: 0
-  PJ_Collider: {fileID: 0}
+  PJ_Collider: {fileID: 162928682}
   Aerial_Dash_Activate: 0
---- !u!4 &348128954
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348128951}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.91516, y: -2.03046, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  Is_Double_Jumping: 0
 --- !u!1 &428829017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7633225796114039189, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
@@ -1456,4 +1384,3 @@ SceneRoots:
   - {fileID: 1046136199}
   - {fileID: 455136523}
   - {fileID: 1466527247}
-  - {fileID: 348128954}

@@ -13,6 +13,8 @@ public class PJ_Core_Script : MonoBehaviour
     public Rigidbody2D PCRigid_Body;
     public Collider2D PC_Collider;
     public GameObject PC_Character;
+    public int Number_Of_Jump = 1;
+    public int Number_Of_Jump_Max;
     public Player_Controller PC_Deplacement;
     public float Death_CoolDown;
     public float Stamina_Gain_CoolDown_Value;
@@ -69,7 +71,6 @@ public class PJ_Core_Script : MonoBehaviour
 
 
        
-    
     
     
     
