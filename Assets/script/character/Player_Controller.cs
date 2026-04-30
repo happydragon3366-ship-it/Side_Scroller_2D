@@ -9,22 +9,23 @@ public class Player_Controller : MonoBehaviour
 
 
 
-    public float JumpForce = 300f;
-    public float SpeedBase = 2f;
-    public int GravityForce = 1;
-    public float DashForce = 10;
+    public float JumpForce ;
+    public float SpeedBase ;
+    public int GravityForce ;
+    public float DashForce ;
     public GameObject PlayerCharacter;
     public Rigidbody2D PCBody;
     public LayerMask mask;
     public IEnumerator MyCoroutine;
     public float cooldown;
     public bool _amIDashing;
+    public bool _amIJumping;
     public PJ_Core_Script Character;
     public Wings Mutation_Wings;
-    
-   
-   
-    
+
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,31 +55,35 @@ public class Player_Controller : MonoBehaviour
             if (horizontalAxis != 0)
             {
                 Dash(horizontalAxis);
-                
+
             }
         }
-        if(!_amIDashing)
+        if (!_amIDashing)
         {
             PCBody.linearVelocityX = horizontalAxis * SpeedBase;
         }
 
+        CheckGround();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
-           if(Character.Number_Of_Jump > 0)
+        
+            if (Character.Number_Of_Jump > 0)
             {
-             PCBody.AddForceY(JumpForce);
-             Character.Number_Of_Jump -= 1;
+                _amIJumping = true;
+                PCBody.AddForceY(JumpForce);
+                Character.Number_Of_Jump -= 1;
+                
             }
-
-         
-      
+            else
+            {
+                _amIJumping = false;
+            }
+        
         }
 
-       
+     
+    }
     
-    
-    }    
 
     public void Dash(float axisValue)
     {
@@ -91,11 +96,11 @@ public class Player_Controller : MonoBehaviour
                 PCBody.linearVelocityX = axisValue * DashForce;
                 StartCoroutine(DashCooldown());
                 Character.Stamina_Max_Value -= 4f;
-                
+
 
 
             }
-    }   }    
+        } }
     public IEnumerator DashCooldown()
     {
         _amIDashing = true;
@@ -105,14 +110,24 @@ public class Player_Controller : MonoBehaviour
 
     public bool CheckGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f, mask);
+       
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.3f, mask);
         if (hit == true)
         {
             Character.Number_Of_Jump = Character.Number_Of_Jump_Max;
+            print("YTYU");
             return true;
-            
         }
-        else return false;
+        else
+            print("RRR");
+            return false;
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(transform.position, Vector3.down * 0.3f);
         
     }
 

@@ -222,7 +222,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.030602694}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -232,7 +232,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.9387946}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &162928678
 GameObject:
@@ -351,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 162928678}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: -2.35, z: 0}
+  m_LocalPosition: {x: 1.77, y: -1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -415,8 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42b7d6b0d7e2ad44aa4594f7ebba7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_Controller
-  JumpForce: 300
-  SpeedBase: 3
+  JumpForce: 600
+  SpeedBase: 10
   GravityForce: 2
   DashForce: 6
   PlayerCharacter: {fileID: 162928678}
@@ -426,6 +426,7 @@ MonoBehaviour:
     m_Bits: 64
   cooldown: 0.6
   _amIDashing: 0
+  _amIJumping: 0
   Character: {fileID: 162928684}
   Mutation_Wings: {fileID: 162928686}
 --- !u!114 &162928684
@@ -445,8 +446,8 @@ MonoBehaviour:
   PCRigid_Body: {fileID: 162928679}
   PC_Collider: {fileID: 162928682}
   PC_Character: {fileID: 162928678}
-  Number_Of_Jump: 1
-  Number_Of_Jump_Max: 0
+  Number_Of_Jump: 0
+  Number_Of_Jump_Max: 1
   PC_Deplacement: {fileID: 162928683}
   Death_CoolDown: 5
   Stamina_Gain_CoolDown_Value: 5
@@ -489,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ae148076f35bb43b3b9eb1e1a1767a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wings
-  Mutation_Jauge: 0
+  Mutation_Jauge: 100
   PJ_control: {fileID: 162928683}
   Character: {fileID: 162928684}
   Mutation_Activate: 0
@@ -511,7 +512,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 583e2b8c4c220fe4ab170434cf213f2c, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -617,7 +618,7 @@ Transform:
   m_GameObject: {fileID: 455136520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3142258, y: -2.846202, z: -10}
+  m_LocalPosition: {x: 0.8157742, y: -1.6062021, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -786,7 +787,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3142258, y: -2.846202, z: -10}
+  m_LocalPosition: {x: 0.8157742, y: -1.6062021, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1265,12 +1266,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307575091628413073, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0293
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307575091628413073, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7307575091628413073, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.18
+      value: -5.1654
       objectReference: {fileID: 0}
     - target: {fileID: 7307575091628413073, guid: 3f113bdc4a3843442a4ab7d70949a3bb, type: 3}
       propertyPath: m_LocalPosition.z

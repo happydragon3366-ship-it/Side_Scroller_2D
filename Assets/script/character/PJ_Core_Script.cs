@@ -13,7 +13,7 @@ public class PJ_Core_Script : MonoBehaviour
     public Rigidbody2D PCRigid_Body;
     public Collider2D PC_Collider;
     public GameObject PC_Character;
-    public int Number_Of_Jump = 1;
+    public int Number_Of_Jump;
     public int Number_Of_Jump_Max;
     public Player_Controller PC_Deplacement;
     public float Death_CoolDown;
@@ -68,10 +68,6 @@ public class PJ_Core_Script : MonoBehaviour
         {
             StartCoroutine(Stamina_Lack());
         }
-
-
-       
-    
     
     
     }
@@ -102,13 +98,8 @@ public class PJ_Core_Script : MonoBehaviour
     {
         
         
-        
             Stamina_Max_Value = Stamina_Max_Value + 1f;
             yield return new WaitForSeconds(Stamina_Gain_CoolDown_Value);
-        
-        
-
-
 
     }
 
