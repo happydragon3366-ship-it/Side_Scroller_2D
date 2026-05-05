@@ -39,7 +39,7 @@ public class Snake_Body : MonoBehaviour
 
         if(Mutation_Activate == false)
         {
-            PJ_control.DashForce = 10;
+            
             PJ_Collider.excludeLayers = Nothings;
         }
 
@@ -52,7 +52,7 @@ public class Snake_Body : MonoBehaviour
         if(Mutation_Activate == true)
         {
 
-            PJ_control.DashForce = 20;
+            PJ_control.DashForce = 6 ;
             if (PJ_control._amIDashing == true)
             {
                 PJ_Collider.excludeLayers = Foes_Mask;

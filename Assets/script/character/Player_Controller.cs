@@ -52,6 +52,7 @@ public class Player_Controller : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
         {
+            Debug.Log("Dash_Try");
             if (horizontalAxis != 0)
             {
                 Dash(horizontalAxis);
@@ -90,10 +91,10 @@ public class Player_Controller : MonoBehaviour
         if (!_amIDashing)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.4f, mask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, mask);
             if (hit.collider == true)
             {
-                PCBody.linearVelocityX = axisValue * DashForce;
+                PCBody.linearVelocityX *= DashForce;
                 StartCoroutine(DashCooldown());
                 Character.Stamina_Max_Value -= 4f;
 
@@ -111,15 +112,13 @@ public class Player_Controller : MonoBehaviour
     public bool CheckGround()
     {
        
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.3f, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, mask);
         if (hit == true)
         {
             Character.Number_Of_Jump = Character.Number_Of_Jump_Max;
-            print("YTYU");
             return true;
         }
         else
-            print("RRR");
             return false;
 
     }
@@ -127,7 +126,7 @@ public class Player_Controller : MonoBehaviour
     private void OnDrawGizmos()
     {
        Gizmos.color = Color.yellow;
-       Gizmos.DrawRay(transform.position, Vector3.down * 0.3f); 
+       Gizmos.DrawRay(transform.position, Vector3.down * 1.1f); 
     }
 
 }
