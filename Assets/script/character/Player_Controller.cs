@@ -40,7 +40,7 @@ public class Player_Controller : MonoBehaviour
         var horizontalAxis = 0;
 
         if (Input.GetKey(KeyCode.LeftArrow))
-        {
+        {         
             horizontalAxis = -1;
 
         }
@@ -126,11 +126,8 @@ public class Player_Controller : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, Vector3.down * 0.3f);
-        
+       Gizmos.color = Color.yellow;
+       Gizmos.DrawRay(transform.position, Vector3.down * 0.3f); 
     }
 
-
 }
-
