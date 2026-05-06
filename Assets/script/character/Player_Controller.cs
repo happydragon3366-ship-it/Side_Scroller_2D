@@ -91,12 +91,12 @@ public class Player_Controller : MonoBehaviour
         if (!_amIDashing)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, mask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.7f, mask);
             if (hit.collider == true)
             {
                 PCBody.linearVelocityX *= DashForce;
                 StartCoroutine(DashCooldown());
-                Character.Stamina_Max_Value -= 4f;
+               
 
 
 
@@ -112,13 +112,15 @@ public class Player_Controller : MonoBehaviour
     public bool CheckGround()
     {
        
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.7f, mask);
         if (hit == true)
         {
+            print("GGGG");
             Character.Number_Of_Jump = Character.Number_Of_Jump_Max;
             return true;
         }
         else
+            print("ggggg");
             return false;
 
     }
@@ -126,7 +128,7 @@ public class Player_Controller : MonoBehaviour
     private void OnDrawGizmos()
     {
        Gizmos.color = Color.yellow;
-       Gizmos.DrawRay(transform.position, Vector3.down * 1.1f); 
+       Gizmos.DrawRay(transform.position, Vector3.down * 1.7f); 
     }
 
 }

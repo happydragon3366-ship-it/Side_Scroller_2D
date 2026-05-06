@@ -11,6 +11,7 @@ public class Snake_Body : MonoBehaviour
     public Collider2D PJ_Collider;
     public LayerMask Foes_Mask;
     public LayerMask Nothings;
+    public float NewDashForce;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,7 +53,7 @@ public class Snake_Body : MonoBehaviour
         if(Mutation_Activate == true)
         {
 
-            PJ_control.DashForce = 6 ;
+            PJ_control.DashForce = NewDashForce;
             if (PJ_control._amIDashing == true)
             {
                 PJ_Collider.excludeLayers = Foes_Mask;

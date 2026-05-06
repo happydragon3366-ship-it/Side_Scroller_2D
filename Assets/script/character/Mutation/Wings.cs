@@ -29,7 +29,7 @@ public class Wings : MonoBehaviour
         {
             Mutation_Activate = true;
             DoubleJump();
-            AerialDash(0);
+           
         }
         if (Mutation_Jauge < 100)
         {
@@ -49,37 +49,11 @@ public class Wings : MonoBehaviour
         Character.Number_Of_Jump_Max = 2;
     }
 
-    public void AerialDash(int horizontalAxis)
-    {
-        if (PJ_control._amIJumping != true)
-        {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    horizontalAxis = -1;
-
-                }
-
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    horizontalAxis = 1;
-                }
-            }
-            
-
-            
-
-
-
-           
-
-
-        }
+   
 
 
 
 
 
-    }
+    
 }
