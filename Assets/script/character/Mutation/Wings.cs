@@ -8,7 +8,7 @@ public class Wings : MonoBehaviour
     public bool Mutation_Activate;
     public Collider2D PJ_Collider;
     public bool Aerial_Dash_Activate;
-    public bool Is_Double_Jumping;
+    public Animator animator;
    
 
 
@@ -37,7 +37,24 @@ public class Wings : MonoBehaviour
 
         }
 
-
+        if (Mutation_Activate == true)
+        {
+            if (PJ_control._amIJumping == true)
+            {
+               if(Character.Number_Of_Jump == 1)
+                {
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        animator.SetBool("DoubleJumping", true);
+                    }
+                }
+                           
+                
+            }
+        }
+        else
+            animator.SetBool("DoubleJumping", false);
+            
 
        
 

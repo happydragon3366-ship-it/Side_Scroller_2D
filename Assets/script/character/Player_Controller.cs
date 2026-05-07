@@ -93,6 +93,7 @@ public class Player_Controller : MonoBehaviour
             if (Character.Number_Of_Jump > 0)
             {
                 _amIJumping = true;
+                animator.SetBool("Jump", true);
                 PCBody.AddForceY(JumpForce);
                 Character.Number_Of_Jump -= 1;
                 
@@ -116,7 +117,7 @@ public class Player_Controller : MonoBehaviour
         if (!_amIDashing)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.7f, mask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, mask);
             if (hit.collider == true)
             {
                 PCBody.linearVelocityX *= DashForce;
@@ -138,24 +139,26 @@ public class Player_Controller : MonoBehaviour
 
     public bool CheckGround()
     {
-       
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.7f, mask);
+      
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f, mask);
         if (hit == true)
         {
-            
+
             Character.Number_Of_Jump = Character.Number_Of_Jump_Max;
+            animator.SetBool("Jump", false);
+            Mutation_Wings.animator.SetBool("DoubleJumping", false);
             return true;
         }
         else
-            
-            return false;
+        
+        return false;
 
     }
 
     private void OnDrawGizmos()
     {
        Gizmos.color = Color.yellow;
-       Gizmos.DrawRay(transform.position, Vector3.down * 1.7f); 
+       Gizmos.DrawRay(transform.position, Vector3.down * 0.05f); 
     }
 
 }
