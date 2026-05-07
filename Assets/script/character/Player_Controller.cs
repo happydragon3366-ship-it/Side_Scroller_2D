@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
@@ -20,8 +21,11 @@ public class Player_Controller : MonoBehaviour
     public float cooldown;
     public bool _amIDashing;
     public bool _amIJumping;
+    public bool _amIWalking;
     public PJ_Core_Script Character;
     public Wings Mutation_Wings;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
 
 
@@ -42,12 +46,22 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {         
             horizontalAxis = -1;
+            spriteRenderer.flipX = true;
+            _amIWalking = true; 
+
 
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             horizontalAxis = 1;
+            spriteRenderer.flipX = false;
+            _amIWalking = true;
+        }
+
+        if (horizontalAxis == 0)
+        {
+            _amIWalking = false;
         }
 
         if (Input.GetKey(KeyCode.E))
@@ -62,7 +76,15 @@ public class Player_Controller : MonoBehaviour
         if (!_amIDashing)
         {
             PCBody.linearVelocityX = horizontalAxis * SpeedBase;
+
         }
+
+        if(_amIWalking == true)
+        {
+            animator.SetBool("walk", true);
+        }
+        else
+            animator.SetBool("walk",  false);
 
         CheckGround();
         if (Input.GetKeyDown(KeyCode.Space))
@@ -79,10 +101,13 @@ public class Player_Controller : MonoBehaviour
             {
                 _amIJumping = false;
             }
-        
+ 
         }
+        if (_amIDashing == true)
+        animator.SetBool("_Dashing", true);
+        else
+            animator.SetBool("_Dashing", false);
 
-     
     }
     
 
@@ -97,6 +122,7 @@ public class Player_Controller : MonoBehaviour
                 PCBody.linearVelocityX *= DashForce;
                 StartCoroutine(DashCooldown());
                
+                
 
 
 
@@ -107,6 +133,7 @@ public class Player_Controller : MonoBehaviour
         _amIDashing = true;
         yield return new WaitForSeconds(cooldown);
         _amIDashing = false;
+
     }
 
     public bool CheckGround()
@@ -115,12 +142,12 @@ public class Player_Controller : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.7f, mask);
         if (hit == true)
         {
-            print("GGGG");
+            
             Character.Number_Of_Jump = Character.Number_Of_Jump_Max;
             return true;
         }
         else
-            print("ggggg");
+            
             return false;
 
     }
