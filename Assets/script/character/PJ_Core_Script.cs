@@ -68,39 +68,43 @@ public class PJ_Core_Script : MonoBehaviour
 
     public void MutationActivator()
     {
-        
-        if(WingMutation.Mutation_Jauge == 0)
+        print("GGGGGG"); 
+        if(WingMutation.Mutation_Jauge == 0f)
         {
            if(Input.GetKey(KeyCode.U))
            {
-                WingMutation.Mutation_Jauge = 100;
+                print("GEPMNS"); 
+                WingMutation.Mutation_Jauge += 100f;
+                print("ebnbe");
            }
         }
+
      
-        if(WingMutation.Mutation_Jauge == 100)
+     
+        if(WingMutation.Mutation_Jauge == 100f)
         {
             if(Input.GetKey(KeyCode.U))
             {
-                WingMutation.Mutation_Jauge = 0;
+                WingMutation.Mutation_Jauge = 0f;
             }
         }
 
 
 
-        if (SnakeMutation.Mutation_Jauge == 0)
+        if (SnakeMutation.Mutation_Jauge == 0f)
         {
             if (Input.GetKey(KeyCode.I))
             {
-                SnakeMutation.Mutation_Jauge = 100;
+                SnakeMutation.Mutation_Jauge += 100f;
             }
         }
 
 
-        if (SnakeMutation.Mutation_Jauge == 100)
+        if (SnakeMutation.Mutation_Jauge == 100f)
         {
             if (Input.GetKey(KeyCode.I))
             {
-                SnakeMutation.Mutation_Jauge = 0;
+                SnakeMutation.Mutation_Jauge = 0f;
             }
         }
 
