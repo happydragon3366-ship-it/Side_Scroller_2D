@@ -471,7 +471,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.24238896, y: 1.580802}
+  m_Offset: {x: -0.0785211, y: 1.580802}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -481,7 +481,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8020358, y: 3.2317533}
+  m_Size: {x: 1.4743001, y: 3.2317533}
   m_EdgeRadius: 0
 --- !u!114 &162928683
 MonoBehaviour:
@@ -533,6 +533,8 @@ MonoBehaviour:
   PC_Deplacement: {fileID: 162928683}
   Death_CoolDown: 5
   Capacity_Damage: 0
+  WingMutation: {fileID: 162928686}
+  SnakeMutation: {fileID: 162928685}
 --- !u!114 &162928685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8eb36a3b05a9a4a8ccbad5f5010747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snake_Body
-  Mutation_Jauge: 100
+  Mutation_Jauge: 0
   PJ_control: {fileID: 162928683}
   Character: {fileID: 162928684}
   Mutation_Activate: 0
@@ -569,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ae148076f35bb43b3b9eb1e1a1767a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wings
-  Mutation_Jauge: 100
+  Mutation_Jauge: 0
   PJ_control: {fileID: 162928683}
   Character: {fileID: 162928684}
   Mutation_Activate: 0
@@ -719,7 +721,7 @@ Transform:
   m_GameObject: {fileID: 455136520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8361932, y: -5.086202, z: -10}
+  m_LocalPosition: {x: 0.8357742, y: -5.086202, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -888,7 +890,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8361932, y: -5.086202, z: -10}
+  m_LocalPosition: {x: 0.8357742, y: -5.086202, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

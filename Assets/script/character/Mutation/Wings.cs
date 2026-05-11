@@ -55,9 +55,6 @@ public class Wings : MonoBehaviour
         else
             animator.SetBool("DoubleJumping", false);
             
-
-       
-
     }
 
 
@@ -65,12 +62,5 @@ public class Wings : MonoBehaviour
     {
         Character.Number_Of_Jump_Max = 2;
     }
-
-   
-
-
-
-
-
     
 }

@@ -17,6 +17,8 @@ public class PJ_Core_Script : MonoBehaviour
     public Player_Controller PC_Deplacement;
     public float Death_CoolDown;
     public float Capacity_Damage;
+    public Wings WingMutation;
+    public Snake_Body SnakeMutation;
   
     
     
@@ -37,6 +39,7 @@ public class PJ_Core_Script : MonoBehaviour
             
         }
 
+     MutationActivator();
        
         
         
@@ -63,8 +66,44 @@ public class PJ_Core_Script : MonoBehaviour
         
     }
 
-   
- 
+    public void MutationActivator()
+    {
+        
+        if(WingMutation.Mutation_Jauge == 0)
+        {
+           if(Input.GetKey(KeyCode.U))
+           {
+                WingMutation.Mutation_Jauge = 100;
+           }
+        }
+     
+        if(WingMutation.Mutation_Jauge == 100)
+        {
+            if(Input.GetKey(KeyCode.U))
+            {
+                WingMutation.Mutation_Jauge = 0;
+            }
+        }
 
+
+
+        if (SnakeMutation.Mutation_Jauge == 0)
+        {
+            if (Input.GetKey(KeyCode.I))
+            {
+                SnakeMutation.Mutation_Jauge = 100;
+            }
+        }
+
+
+        if (SnakeMutation.Mutation_Jauge == 100)
+        {
+            if (Input.GetKey(KeyCode.I))
+            {
+                SnakeMutation.Mutation_Jauge = 0;
+            }
+        }
+
+    }
 
 }

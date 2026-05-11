@@ -2,7 +2,6 @@
 using JetBrains.Annotations;
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
