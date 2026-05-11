@@ -9,6 +9,7 @@ public class PJ_Core_Script : MonoBehaviour
 {
 
     public float PV;
+    public float MutationJauge_MaxValue;
     public Rigidbody2D PCRigid_Body;
     public Collider2D PC_Collider;
     public GameObject PC_Character;
@@ -68,37 +69,34 @@ public class PJ_Core_Script : MonoBehaviour
 
     public void MutationActivator()
     {
-        print("GGGGGG"); 
-        if(WingMutation.Mutation_Jauge == 0f)
+       if(WingMutation.Mutation_Jauge == 0)
         {
-           if(Input.GetKey(KeyCode.U))
-           {
-                print("GEPMNS"); 
-                WingMutation.Mutation_Jauge += 100f;
-                print("ebnbe");
-           }
-        }
+            print("lmpele");
+            if (Input.GetKey(KeyCode.O))
+            {
+                WingMutation.Mutation_Jauge = MutationJauge_MaxValue;
+                print("ggggg");
+            }
 
-     
-     
-        if(WingMutation.Mutation_Jauge == 100f)
+        }
+  
+        
+       if(WingMutation.Mutation_Jauge == 100f)
         {
-            if(Input.GetKey(KeyCode.U))
+            if (Input.GetKey(KeyCode.O))
             {
                 WingMutation.Mutation_Jauge = 0f;
             }
         }
 
 
-
-        if (SnakeMutation.Mutation_Jauge == 0f)
+        if (SnakeMutation.Mutation_Jauge == 0)
         {
             if (Input.GetKey(KeyCode.I))
             {
-                SnakeMutation.Mutation_Jauge += 100f;
+                SnakeMutation.Mutation_Jauge = MutationJauge_MaxValue;
             }
         }
-
 
         if (SnakeMutation.Mutation_Jauge == 100f)
         {

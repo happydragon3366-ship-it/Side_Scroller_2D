@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PJ_Core_Script
   PV: 20
+  MutationJauge_MaxValue: 100
   PCRigid_Body: {fileID: 162928679}
   PC_Collider: {fileID: 162928682}
   PC_Character: {fileID: 162928678}
