@@ -72,7 +72,7 @@ public class PJ_Core_Script : MonoBehaviour
        if(WingMutation.Mutation_Jauge == 0)
         {
             print("lmpele");
-            if (Input.GetKey(KeyCode.O))
+            if (Input.GetKey(KeyCode.L))
             {
                 WingMutation.Mutation_Jauge = MutationJauge_MaxValue;
                 print("ggggg");
@@ -92,7 +92,7 @@ public class PJ_Core_Script : MonoBehaviour
 
         if (SnakeMutation.Mutation_Jauge == 0)
         {
-            if (Input.GetKey(KeyCode.I))
+            if (Input.GetKey(KeyCode.K))
             {
                 SnakeMutation.Mutation_Jauge = MutationJauge_MaxValue;
             }
