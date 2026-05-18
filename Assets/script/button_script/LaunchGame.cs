@@ -1,15 +1,12 @@
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
-using UnityEditor.Build.Content;
-using UnityEditor.Build.Profile;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Transition_Level : MonoBehaviour
+public class LaunchGame : MonoBehaviour
 {
-    public Collider2D TransitionZone_ContactCore;
-    public PJ_Core_Script Player_Script;
+    public Button Initiate;
     public int SceneList_Number;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,25 +16,14 @@ public class Transition_Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
-    
-    
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnClick()
     {
         int sceneBuildIndex = SceneList_Number;
         SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
     }
-
-
-
-
-
-
-
-
-
 
 
 
