@@ -25,7 +25,7 @@ public class Player_Controller : MonoBehaviour
     public Wings Mutation_Wings;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-
+    public bool Groundistuctch;
 
 
 
@@ -85,7 +85,7 @@ public class Player_Controller : MonoBehaviour
         else
             animator.SetBool("walk",  false);
 
-        CheckGround();
+        CheckGround(true);
         if (Input.GetKeyDown(KeyCode.Space))
         {
         
@@ -136,7 +136,7 @@ public class Player_Controller : MonoBehaviour
 
     }
 
-    public bool CheckGround()
+    public bool CheckGround(bool bool12)
     {
       
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f, mask);
@@ -146,10 +146,10 @@ public class Player_Controller : MonoBehaviour
             Character.Number_Of_Jump = Character.Number_Of_Jump_Max;
             animator.SetBool("Jump", false);
             Mutation_Wings.animator.SetBool("DoubleJumping", false);
-            return true;
+            bool12 = true;
+           
+            
         }
-        else
-        
         return false;
 
     }
