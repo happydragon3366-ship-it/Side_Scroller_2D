@@ -1,8 +1,8 @@
-using Unity.VisualScripting;
-using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering;
-using JetBrains.Annotations;
+
+using UnityEngine;
+
+using UnityEngine.SceneManagement;
 
 
 public class PJ_Core_Script : MonoBehaviour
@@ -29,7 +29,7 @@ public class PJ_Core_Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      
+    
     }
 
     // Update is called once per frame
@@ -38,7 +38,8 @@ public class PJ_Core_Script : MonoBehaviour
         if (PV == PVmin)
         {
             Death();
-            
+            SceneManager.LoadScene(0);
+
         }
 
      MutationActivator();
