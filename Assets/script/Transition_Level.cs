@@ -10,6 +10,9 @@ public class Transition_Level : MonoBehaviour
     public Collider2D TransitionZone_ContactCore;
     public PJ_Core_Script Player_Script;
     public int SceneList_Number;
+    public Ennemies_Core_Script EnnemiCoreS;
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,11 +27,28 @@ public class Transition_Level : MonoBehaviour
     
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        int sceneBuildIndex = SceneList_Number;
-        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        if(!collision.CompareTag( "Player"))
+        {
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            int sceneBuildIndex = SceneList_Number;
+            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        }
+        return;
     }
+
+  
+
+
+
+
+
 
 
 

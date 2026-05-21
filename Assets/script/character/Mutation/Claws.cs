@@ -14,6 +14,9 @@ public class Claws : MonoBehaviour
     public Collider2D Ennemi_DamageZone;
     public LayerMask Ennemi_LayerMask;
     public bool ColliderTestTrue;
+    public SpriteRenderer spriterenderer;
+    public Animator animator;
+    public bool _IsAttacking;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,23 +36,32 @@ public class Claws : MonoBehaviour
 
     public void Hit()
     {
-        if (ColliderTestTrue == true)
+        
+        if (PJ_ControlS._amIJumping == false)
         {
-
-            if (PJ_ControlS._amIJumping == false)
-            {
-                print("hjjh");
-                if (Input.GetKey(KeyCode.F))
-                {
-                    print("op");
-                    Ennemie.PV -= PJ_CoreS.Capacity_Damage;
-
-                }
-            }
-        }
+            print("hjjh");
+           if (Input.GetKey(KeyCode.F))
+           { 
+             PJ_CoreS.PC_Deplacement.enabled = false;
+             animator.SetBool("_IsAttackingAnimation", true);
+             _IsAttacking = true;
+             print("op");
+                PJ_CoreS.PC_Deplacement.enabled = false;
+             if (ColliderTestTrue == true)
+             {
+                _IsAttacking = true;
+                PJ_CoreS.PC_Deplacement.enabled = false;
+                Ennemie.PV -= PJ_CoreS.Capacity_Damage;
+             }
+             else _IsAttacking = false; PJ_CoreS.PC_Deplacement.enabled=true;animator.SetBool("_IsAttackingAnimation", false);
+                return;           
+           }
+           else _IsAttacking = false; PJ_CoreS.PC_Deplacement.enabled = true; animator.SetBool("_IsAttackingAnimation", false);
+        }  return;
+        
         
     }
-   
+    
 
 
     public void ColliderTest()

@@ -1827,6 +1827,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   ColliderTestTrue: 0
+  spriterenderer: {fileID: 6453286387075247457}
+  animator: {fileID: 2100466664}
+  _IsAttacking: 0
 --- !u!1 &2139386625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8251218329329217795, guid: ab30714f4adf612418553f5034947331, type: 3}
@@ -1933,12 +1936,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 891231002632828377, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0368006
+      objectReference: {fileID: 0}
+    - target: {fileID: 891231002632828377, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0368006
+      objectReference: {fileID: 0}
+    - target: {fileID: 891231002632828377, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0368006
+      objectReference: {fileID: 0}
+    - target: {fileID: 891231002632828377, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.41
+      value: -3.78
       objectReference: {fileID: 0}
     - target: {fileID: 891231002632828377, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.72
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 891231002632828377, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1984,6 +1999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 4257305344647243919, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6527281485957515906, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
       propertyPath: m_Size.x
       value: 1.3664157
@@ -2012,6 +2031,11 @@ PrefabInstance:
       insertIndex: 8
       addedObject: {fileID: 2100466671}
   m_SourcePrefab: {fileID: 100100000, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
+--- !u!212 &6453286387075247457 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6977095264720164328, guid: 4e043bbcdc817014692a380b32a597b3, type: 3}
+  m_PrefabInstance: {fileID: 6453286387075247456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8840241175643376032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2023,6 +2047,10 @@ PrefabInstance:
     - target: {fileID: 2402707827458649826, guid: de184b0dfa30d334f93e988e0ef8068f, type: 3}
       propertyPath: m_Name
       value: Transition_Level_Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808729559493159063, guid: de184b0dfa30d334f93e988e0ef8068f, type: 3}
+      propertyPath: EnnemiCoreS
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6808729559493159063, guid: de184b0dfa30d334f93e988e0ef8068f, type: 3}
       propertyPath: Player_Script
