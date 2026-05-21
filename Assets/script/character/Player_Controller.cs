@@ -139,7 +139,7 @@ public class Player_Controller : MonoBehaviour
     public bool CheckGround(bool bool12)
     {
       
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.01f, mask);
         if (hit == true)
         {
 
@@ -157,7 +157,7 @@ public class Player_Controller : MonoBehaviour
     private void OnDrawGizmos()
     {
        Gizmos.color = Color.yellow;
-       Gizmos.DrawRay(transform.position, Vector3.down * 0.05f); 
+       Gizmos.DrawRay(transform.position, Vector3.down * 0.01f); 
     }
 
 }

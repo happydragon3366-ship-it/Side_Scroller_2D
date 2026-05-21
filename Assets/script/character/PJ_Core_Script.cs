@@ -9,6 +9,7 @@ public class PJ_Core_Script : MonoBehaviour
 {
 
     public float PV;
+    public float PVmin;
     public float MutationJauge_MaxValue;
     public Rigidbody2D PCRigid_Body;
     public Collider2D PC_Collider;
@@ -34,7 +35,7 @@ public class PJ_Core_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PV == 0)
+        if (PV == PVmin)
         {
             Death();
             
@@ -42,7 +43,10 @@ public class PJ_Core_Script : MonoBehaviour
 
      MutationActivator();
        
-        
+    if(PV <= 0)
+        {
+            PV = PVmin;
+        }
         
     
     }

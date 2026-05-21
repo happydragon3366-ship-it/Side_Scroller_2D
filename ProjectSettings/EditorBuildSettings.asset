@@ -14,6 +14,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Second_Room.unity
     guid: d18cd6f71bd2a6d4ca756d5214387e82
+  - enabled: 1
+    path: Assets/Scenes/Thirty_Room.unity
+    guid: 1131399fd99a43d4cbb88036eb546e89
+  - enabled: 1
+    path: Assets/Scenes/Forty_Room.unity
+    guid: f5eec0d1b428ba74db3a285852a067b1
+  - enabled: 1
+    path: Assets/Scenes/Fifhty_Room.unity
+    guid: 017649a44d616254f87650aad591de22
+  - enabled: 1
+    path: Assets/Scenes/Sixty_Room.unity
+    guid: d1822571a752d754a880be11eb61c9cc
+  - enabled: 1
+    path: Assets/Scenes/Seven_Room.unity
+    guid: d6fcb5ab49d29e44c8d359fc4f31c5fd
+  - enabled: 1
+    path: Assets/Scenes/Heighty_Room.unity
+    guid: 938c3515b1610cc4c8afa75c9d00547e
+  - enabled: 1
+    path: Assets/Scenes/ninety_Room.unity
+    guid: 72b13b4cfbf975a4199fdef6de7f3624
+  - enabled: 1
+    path: Assets/Scenes/Ten_Room.unity
+    guid: c7c5b36a7eebdca4ba95200a2e865b1d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3a99fcf1b9f956c46abd8b5e49468f64, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
